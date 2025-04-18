@@ -32,10 +32,6 @@ const StyledButton = styled.button`
   color: white;
 `;
 
-const StyledErrorText = styled.p`
-  color: red;
-`;
-
 const StyledResultText = styled.p`
   margin-top: 1%;
 `;
@@ -57,6 +53,7 @@ export default function Home() {
       const fullLink = window.location.origin + "/" + result.alias;
       setShortUrl(fullLink);
     } catch (err) {
+      console.error(err);
   }
 }
 
