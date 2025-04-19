@@ -5,11 +5,12 @@ import styled from "styled-components";
 
 const StyledContainer = styled.main`
   margin: 0 auto;
-  padding: 2%;
+  padding: 4%;
 `;
 
 const StyledTitle = styled.h1`
   color: red;
+  text-align: center;
 `;
 
 const StyledFormWrapper = styled.div`
@@ -40,7 +41,9 @@ const StyledResultText = styled.p`
 `;
 
 const StyledLinkText = styled.a`
-  color: blue;
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
 `;
 
 export default function Home() {
@@ -62,7 +65,7 @@ export default function Home() {
 
   return (
     <StyledContainer>
-      <StyledTitle>Shortener</StyledTitle> 
+      <StyledTitle>URL Shortener</StyledTitle> 
       <StyledFormWrapper >
         <StyledLabel>URL</StyledLabel>
         <StyledInput
@@ -82,7 +85,7 @@ export default function Home() {
           required
         />
 
-        <StyledButton onClick={shortenLink}>Shorten</StyledButton>
+        <StyledButton onClick={shortenLink}>Shorten It</StyledButton>
         </StyledFormWrapper>
 
        

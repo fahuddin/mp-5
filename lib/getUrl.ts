@@ -1,4 +1,3 @@
-// lib/getAliasByKey.ts
 import getCollection, { ALIAS_COLLECTION } from "@/db";
 import { AliasProps } from "@/types";
 
