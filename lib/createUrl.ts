@@ -4,13 +4,13 @@ import getCollection, { ALIAS_COLLECTION } from "@/db";
 export default async function createUrl(alias: string, url: string): Promise<{ alias: string; url: string }> {
 
     if (!alias || alias.trim() === "") {
-        throw new Error("Alias cannot be empty");
+        throw new Error("Alias is empty!");
     }
 
     try {
         new URL(url);
     } catch {
-        throw new Error("Invalid URL format");
+        throw new Error("URL is not valid");
     }
 
     try {
@@ -24,14 +24,14 @@ export default async function createUrl(alias: string, url: string): Promise<{ a
 
     } catch (error) {
         console.log(error);
-        throw new Error("URL fails ");
+        throw new Error("URL fails");
     }
 
     const aliasCollection = await getCollection(ALIAS_COLLECTION);
     const existing = await aliasCollection.findOne({alias});
 
     if (existing) {
-        throw new Error("alias already exists");}
+        throw new Error("alias exists");}
 
     const res = await aliasCollection.insertOne({alias, url});
 

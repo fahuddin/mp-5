@@ -9,17 +9,17 @@ const StyledContainer = styled.main`
 `;
 
 const StyledTitle = styled.h1`
-  font-size: 6%;  
+  color: red;
 `;
 
 const StyledFormWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 10%;
 `;
 
 const StyledLabel = styled.label`
-  font-size: 8%;
-  color: black;
+  color: white;
 `;
 
 const StyledInput = styled.input`
@@ -28,12 +28,15 @@ margin: 1%;
 `;
 
 const StyledButton = styled.button`
-  background-color: blue;
+  background-color: red;
+  display: flex;
+  justify-content: center;
   color: white;
 `;
 
 const StyledResultText = styled.p`
   margin-top: 1%;
+  color: white;
 `;
 
 const StyledLinkText = styled.a`
@@ -42,8 +45,8 @@ const StyledLinkText = styled.a`
 
 export default function Home() {
   const [url, setUrl] = useState("");
-  const [alias, setAlias] = useState("");
   const [shortUrl, setShortUrl] = useState("");
+  const [alias, setAlias] = useState("");
 
   async function shortenLink() {
     setShortUrl("");
@@ -73,7 +76,7 @@ export default function Home() {
         <StyledLabel>Alias</StyledLabel>
         <StyledInput
           type="text"
-          placeholder="your alias"
+          placeholder="your customed alias"
           value={alias}
           onChange={(e) => setAlias(e.target.value)}
           required
@@ -83,8 +86,8 @@ export default function Home() {
         </StyledFormWrapper>
 
        
-        <StyledResultText>
-          Your short URL: <StyledLinkText href={shortUrl}>{shortUrl}</StyledLinkText>
+        <StyledResultText>Your shorter URL:
+          <StyledLinkText href={shortUrl}>{shortUrl}</StyledLinkText>
         </StyledResultText>
   
     </StyledContainer>
